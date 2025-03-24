@@ -54,6 +54,9 @@ export default function UserInfoModal() {
           <DialogTitle>Preencha suas informações</DialogTitle>
         </DialogHeader>
         <div className="space-y-4">
+          <p className="text-sm text-gray-600">
+            As informações fornecidas serão utilizadas para personalizar sua experiência no site, garantindo uma melhor interação com nossos serviços.
+          </p>
           {errorMessage && (
             <div className="p-3 text-sm text-red-600 bg-red-100 border border-red-400 rounded">
               {errorMessage}
