@@ -29,7 +29,7 @@ export default function HeroSection() {
               arquivos com recursos avançados de segurança e colaboração.
             </p>
             <div className="flex flex-col sm:flex-row gap-3">
-              <Link href="/register">
+
                 <Button
                   className="bg-[#0096f4] hover:bg-[#0096f4]/90 text-white"
                   onClick={handleStartFreeClick}
@@ -37,7 +37,6 @@ export default function HeroSection() {
                   Começar Grátis
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
-              </Link>
               <Link href="#demo">
                 <Button
                   variant="outline"
