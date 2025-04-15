@@ -13,6 +13,6 @@ services:
       - traefik.http.routers.${SUBDOMINIO}.entrypoints=websecure
       - traefik.http.routers.${SUBDOMINIO}.tls.certresolver=myresolver
       # Regra para o domínio principal
-      - traefik.http.routers.cortex-main.rule=Host(`${cortex.tec.br}`)
+      - traefik.http.routers.cortex-main.rule=Host(`cortex.tec.br`)
       - traefik.http.routers.cortex-main.entrypoints=websecure
       - traefik.http.routers.cortex-main.tls.certresolver=myresolver
