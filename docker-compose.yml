@@ -5,6 +5,8 @@ services:
       dockerfile: Dockerfile
     environment:
       - NODE_ENV=production
+    ports:
+      - "3001:3000"
     restart: unless-stopped
     command: npm start
     labels:
@@ -16,5 +18,3 @@ services:
       - traefik.http.routers.cortex-main.rule=Host(`cortex.tec.br`)
       - traefik.http.routers.cortex-main.entrypoints=websecure
       - traefik.http.routers.cortex-main.tls.certresolver=myresolver
-      # Especificar a porta do serviço para o Traefik
-      - traefik.http.services.nextjs.loadbalancer.server.port=3000
