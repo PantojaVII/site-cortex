@@ -1,3 +1,7 @@
+networks:
+  traefik_network:
+    external: true  # Usa a mesma rede externa do Traefik
+
 services:
   nextjs:
     build:
@@ -5,10 +9,11 @@ services:
       dockerfile: Dockerfile
     environment:
       - NODE_ENV=production
-    ports:
-      - "3001:3000"
+    
     restart: unless-stopped
     command: npm start
+    networks:
+      - traefik_network
     labels:
       - traefik.enable=true
       - traefik.http.routers.${SUBDOMINIO}.rule=Host(`${SUBDOMINIO}.cortex.tec.br`)
