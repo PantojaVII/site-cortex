@@ -3,9 +3,12 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    ports:
-      - "3001:3000"
     environment:
       - NODE_ENV=production
     restart: unless-stopped
     command: npm start
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.${SUBDOMINIO}.rule=Host(`${SUBDOMINIO}.cortex.tec.br`)
+      - traefik.http.routers.${SUBDOMINIO}.entrypoints=websecure
+      - traefik.http.routers.${SUBDOMINIO}.tls.certresolver=myresolver
